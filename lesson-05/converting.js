@@ -1,5 +1,3 @@
-// number, string, boolean
-
 let newConvertingNumber1 = Number(false);
 
 let newConvertingBoolean1 = Boolean(1);
