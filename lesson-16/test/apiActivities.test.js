@@ -1,7 +1,7 @@
-let axios = require('axios')
-let validator = require('jsonschema')
-let getActivitiesSchema = require('../data/getActivitiesSchema.v1.json')
-let activitiesSchema2 = require('../data/activitiesSchema2.v1.json')
+const axios = require('axios')
+const validator = require('jsonschema')
+const getActivitiesSchema = require('../data/getActivitiesSchema.v1.json')
+const activitiesSchema2 = require('../data/activitiesSchema2.v1.json')
 
 
 describe ('API tests', function() {
@@ -51,7 +51,7 @@ describe ('API tests', function() {
     })
 
     test('GET should be valid json schema', async() => {
-        let result = await validator.validate(response1.data, getActivitiesSchema)
+        const result = await validator.validate(response1.data, getActivitiesSchema)
         await expect(result.valid).toEqual(true)
     })
 
@@ -60,7 +60,7 @@ describe ('API tests', function() {
     })
 
     test('GET activities by id should be valid json schema', async() => {
-        let result = await validator.validate(response2.data, activitiesSchema2)
+        const result = await validator.validate(response2.data, activitiesSchema2)
         await expect(result.valid).toEqual(true)
     })
 
@@ -69,7 +69,7 @@ describe ('API tests', function() {
     })
 
     test('POST should be valid schema', async() => {
-        let result = await validator.validate(response3.data, activitiesSchema2)
+        const result = await validator.validate(response3.data, activitiesSchema2)
         await expect(result.valid).toEqual(true)
     })
 
@@ -78,12 +78,12 @@ describe ('API tests', function() {
     })
 
     test('PUT should be valid schema', async() => {
-        let result = await validator.validate(response4.data, activitiesSchema2)
+        const result = await validator.validate(response4.data, activitiesSchema2)
         await expect(result.valid).toEqual(true)
     })
 
     test('DELETE activities by id request should be 200', async() => {
-        let response5 = await axios.delete('https://fakerestapi.azurewebsites.net/api/v1/Activities/30', {
+        const response5 = await axios.delete('https://fakerestapi.azurewebsites.net/api/v1/Activities/30', {
             headers: {
                 Accept: '*/*'
             }
