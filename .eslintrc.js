@@ -23,6 +23,9 @@ module.exports = {
     },
     "rules": {
          "no-extra-semi": "off",
-         "no-undef": "off"
+         "no-undef": "off",
+         "camelcase": "off",
+         "no-restricted-syntax": 0,
+         "lines-between-class-members": 0
     }
 }
