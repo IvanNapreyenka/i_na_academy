@@ -22,10 +22,7 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
-         "no-extra-semi": "off",
-         "no-undef": "off",
-         "camelcase": "off",
-         "no-restricted-syntax": 0,
-         "lines-between-class-members": 0
+        "no-extra-semi": "off",
+        "no-undef": "off"
     }
 }
