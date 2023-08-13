@@ -4,3 +4,6 @@
 \coverage
 \allure-report
 \allure-results
+\.tmp
+\cucumber-html-report
+\index.js
