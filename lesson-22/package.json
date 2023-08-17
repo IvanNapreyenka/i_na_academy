@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js && cucumber-html-reporter",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "clean_reports": "rimraf \"./allure-report/*\" \"./allure-results/*\" \"./.tmp/*\"",
     "wdio": "wdio run ./wdio.conf.js",
-    "postwdio": "npx allure generate"
+    "postwdio": "npx allure generate",
+    "report": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "@wdio/spec-reporter": "^8.14.0",
     "chromedriver": "^115.0.0",
     "cucumber": "^6.0.7",
+    "cucumber-html-report-generator": "^1.0.33",
     "cucumber-html-reporter": "^7.1.1",
     "wdio-chromedriver-service": "^8.1.1",
     "wdio-cucumberjs-json-reporter": "^5.1.6",
