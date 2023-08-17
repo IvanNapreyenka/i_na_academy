@@ -4,3 +4,5 @@
 \coverage
 \allure-report
 \allure-results
+\.tmp
+\test_report
