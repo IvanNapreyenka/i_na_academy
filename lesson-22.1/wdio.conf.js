@@ -51,26 +51,7 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome',
-        'goog:chromeOptions': {
-            args: [
-                '--whitelisted-ips=',
-                '--disable-infobars=true', // note this does not remove "Chrome is being controlled by automated test software" notification
-                '--disable-gpu',
-                'window-size=1920,1080',
-                'test-type=browser',
-                'disable-notifications',
-                'incognito',
-                'disable-application-cache',
-                '-disable-extensions', // used to bypass loading of extensions which will be blocked by MMC security policy anyway
-                '--ignore-certificate-errors',
-                'enable-automation',
-                '--disable-dev-shm-usage',
-                '--disable-browser-side-navigation',
-                '--no-sandbox',
-                // '--headless'
-            ],
-        }
+        browserName: 'chrome'
     }],
 
     //
@@ -120,7 +101,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-     services: ['chromedriver'],
+    // services: [],
     //
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -142,7 +123,8 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec',['allure', {outputDir: 'allure-results'}],'cucumberjs-json', {jsonFolder: 'cucumber_test_report/', language: 'en'}],
+    // reporters: ['spec',['allure', {outputDir: 'allure-results'}],'cucumberjs-json'],
+    reporters: [['cucumberjs-json', {jsonFolder: 'test_report/', language: 'en'}]],
 
     //
     // If you are using Cucumber you need to specify the location of your step definitions.

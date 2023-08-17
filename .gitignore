@@ -5,5 +5,4 @@
 \allure-report
 \allure-results
 \.tmp
-\cucumber_test_report
-\index.js
+\test_report
